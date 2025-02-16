@@ -16,5 +16,12 @@ class UserSeeder extends Seeder
             'password' => Hash::make('gym'),
             'email_verified_at' => now(),
         ]);
+
+        User::create([
+            'name' => 'Jahxs',
+            'email' => 'jahxs2328@gmail.com',
+            'password' => Hash::make('gym'),
+            'email_verified_at' => now(),
+        ]);
     }
 } 
