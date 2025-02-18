@@ -2,6 +2,13 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MembresiaController;
+use App\Http\Controllers\PagoController;
+use App\Http\Controllers\MetodoPagoController;
+use App\Http\Controllers\RutinaPredefinidaController;
+use App\Http\Controllers\AsignacionRutinaController;
+use App\Http\Controllers\AsistenciaController;
+use App\Http\Controllers\NutricionController;
+use App\Http\Controllers\ImplementoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,6 +26,30 @@ Route::middleware('auth')->group(function () {
     Route::resource('membresias', MembresiaController::class);
     Route::post('membresias/{membresia}/registrar-visita', [MembresiaController::class, 'registrarVisita'])
         ->name('membresias.registrar-visita');
+    Route::resource('pagos', PagoController::class);
+    Route::resource('metodos-pago', MetodoPagoController::class, [
+        'parameters' => ['metodos-pago' => 'metodoPago']
+    ]);
+    Route::get('rutinas-predefinidas', [RutinaPredefinidaController::class, 'index'])
+        ->name('rutinas-predefinidas.index');
+    Route::get('rutinas-predefinidas/create', [RutinaPredefinidaController::class, 'create'])
+        ->name('rutinas-predefinidas.create');
+    Route::post('rutinas-predefinidas', [RutinaPredefinidaController::class, 'store'])
+        ->name('rutinas-predefinidas.store');
+    Route::get('rutinas-predefinidas/{rutinaPredefinida}/edit', [RutinaPredefinidaController::class, 'edit'])
+        ->name('rutinas-predefinidas.edit');
+    Route::put('rutinas-predefinidas/{rutinaPredefinida}', [RutinaPredefinidaController::class, 'update'])
+        ->name('rutinas-predefinidas.update');
+    Route::delete('rutinas-predefinidas/{rutinaPredefinida}', [RutinaPredefinidaController::class, 'destroy'])
+        ->name('rutinas-predefinidas.destroy');
+    Route::resource('asignacion-rutinas', AsignacionRutinaController::class);
+    Route::resource('asistencias', AsistenciaController::class);
+    Route::post('asistencias/entrada', [AsistenciaController::class, 'registrarEntrada'])
+        ->name('asistencias.entrada');
+    Route::post('asistencias/{asistencia}/salida', [AsistenciaController::class, 'registrarSalida'])
+        ->name('asistencias.salida');
+    Route::resource('nutricion', NutricionController::class);
+    Route::resource('implementos', ImplementoController::class);
 });
 
 require __DIR__.'/auth.php';

@@ -19,6 +19,34 @@
                     <x-nav-link :href="route('membresias.index')" :active="request()->routeIs('membresias.*')">
                         {{ __('Membresías') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('pagos.index')" :active="request()->routeIs('pagos.*')">
+                        {{ __('Pagos') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('metodos-pago.index')" :active="request()->routeIs('metodos-pago.*')">
+                        {{ __('Métodos de Pago') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('rutinas-predefinidas.index')" :active="request()->routeIs('rutinas-predefinidas.*')">
+                        {{ __('Rutinas Predefinidas') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('asignacion-rutinas.index')" :active="request()->routeIs('asignacion-rutinas.*')">
+                        {{ __('Asignación de Rutinas') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('asistencias.index')" :active="request()->routeIs('asistencias.*')">
+                        {{ __('Asistencias') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('nutricion.index')" :active="request()->routeIs('nutricion.*')">
+                        {{ __('Nutrición') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('implementos.index')" :active="request()->routeIs('implementos.*')">
+                        {{ __('Implementos') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -73,6 +101,34 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+            
+            <x-responsive-nav-link :href="route('membresias.index')" :active="request()->routeIs('membresias.*')">
+                {{ __('Membresías') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('pagos.index')" :active="request()->routeIs('pagos.*')">
+                {{ __('Pagos') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('rutinas-predefinidas.index')" :active="request()->routeIs('rutinas-predefinidas.*')">
+                {{ __('Rutinas Predefinidas') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('asignacion-rutinas.index')" :active="request()->routeIs('asignacion-rutinas.*')">
+                {{ __('Asignación de Rutinas') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('asistencias.index')" :active="request()->routeIs('asistencias.*')">
+                {{ __('Asistencias') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('nutricion.index')" :active="request()->routeIs('nutricion.*')">
+                {{ __('Nutrición') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('implementos.index')" :active="request()->routeIs('implementos.*')">
+                {{ __('Implementos') }}
             </x-responsive-nav-link>
         </div>
 
